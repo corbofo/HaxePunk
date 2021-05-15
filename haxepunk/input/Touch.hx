@@ -15,7 +15,7 @@ class Touch
 		{
 			var touchId = _touchOrder[i],
 				touch = _touches[touchId];
-			if (touch.released && !touch.pressed)
+			if (touch == null || (touch.released && !touch.pressed))
 			{
 				_touches.remove(touchId);
 				_touchOrder.remove(touchId);
