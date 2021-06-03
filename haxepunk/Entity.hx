@@ -500,13 +500,13 @@ class Entity extends Tweener
 	 * Half the Entity's width.
 	 */
 	public var halfWidth(get, null):Float;
-	inline function get_halfWidth():Float return width / 2;
+	inline function get_halfWidth():Float return width * 0.5;
 
 	/**
 	 * Half the Entity's height.
 	 */
 	public var halfHeight(get, null):Float;
-	inline function get_halfHeight():Float return height / 2;
+	inline function get_halfHeight():Float return height * 0.5;
 
 	/**
 	 * The center x position of the Entity's hitbox.
