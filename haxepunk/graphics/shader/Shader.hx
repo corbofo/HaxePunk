@@ -115,7 +115,7 @@ class Shader
 		GL.linkProgram(glProgram);
 		#if hxp_gl_debug
 		if (GL.getProgramParameter(glProgram, GL.LINK_STATUS) == 0)
-			throw "Unable to initialize the shader program.";
+			throw "Unable to initialize the shader program. " + GL.getProgramInfoLog(glProgram);
 		#end
 
 		position.rebind();
