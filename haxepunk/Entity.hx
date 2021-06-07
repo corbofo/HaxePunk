@@ -647,6 +647,22 @@ class Entity extends Tweener
 	}
 
 	/**
+	 * Removes the graphic to the Entity via a Graphiclist.
+	 * @param	g		Graphic to remove.
+	 */
+	public function removeGraphic(g:Graphic)
+	{
+		if (graphic == null)
+		{
+			return;
+		}
+		if (Std.is(graphic, Graphiclist))
+		{
+			cast(graphic, Graphiclist).remove(g);
+		}
+	}
+	
+	/**
 	 * Sets the Entity's hitbox properties.
 	 * @param	width		Width of the hitbox.
 	 * @param	height		Height of the hitbox.
