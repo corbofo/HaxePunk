@@ -198,7 +198,7 @@ class Ease
 	}
 
 	// Easing constants.
-	@:allow(haxepunk.graphics.Emitter)
+	@:allow(haxepunk.graphics.emitter.Emitter)
 	static inline var PI:Float = 3.141592653589793;
 	static inline var PI2:Float = PI / 2;
 	static inline var EL:Float = 2 * PI / 0.45;
