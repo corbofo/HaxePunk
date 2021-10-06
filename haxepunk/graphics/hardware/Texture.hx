@@ -16,7 +16,12 @@ class Texture
 	{
 		return 0;
 	}
+	public function getPixel32(x:Int, y:Int):Color
+	{
+		return 0;
+	}
 	public function setPixel(x:Int, y:Int, c:Color) {}
+	public function setPixel32(x:Int, y:Int, c:Color) {}
 
 	public function removeColor(color:Color) {}
 	public function clearColor(color:Color) {}
