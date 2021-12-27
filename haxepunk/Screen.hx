@@ -71,8 +71,10 @@ class Screen
 	public var scaleX(default, set):Float = 1;
 	function set_scaleX(value:Float):Float
 	{
-		scaleX = value;
-		HXP.needsResize = true;
+		if (scaleX != value) {
+			scaleX = value;
+			HXP.needsResize = true;
+		}
 		return scaleX;
 	}
 
@@ -82,8 +84,10 @@ class Screen
 	public var scaleY(default, set):Float = 1;
 	function set_scaleY(value:Float):Float
 	{
-		scaleY = value;
-		HXP.needsResize = true;
+		if (scaleY != value) {
+			scaleY = value;
+			HXP.needsResize = true;
+		}
 		return scaleY;
 	}
 
