@@ -182,6 +182,7 @@ class HXP
 	 */
 	public static function resize(width:Int, height:Int)
 	{
+		trace("HXP resize");
 		// resize scene to scale
 		HXP.windowWidth = width;
 		HXP.windowHeight = height;
@@ -190,6 +191,15 @@ class HXP
 		HXP.halfHeight = HXP.height / 2;
 		HXP.bounds.width = width;
 		HXP.bounds.height = height;
+		
+		#if nme
+		var safeRect = nme.Lib.current.stage.safeRect;
+		HXP.bounds.x = safeRect.x;
+		HXP.bounds.y = safeRect.y;
+		HXP.bounds.width = safeRect.width;
+		HXP.bounds.height = safeRect.height;
+		#end
+
 		for (scene in HXP.engine) scene._resize();
 		HXP.needsResize = false;
 	}
