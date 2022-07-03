@@ -79,6 +79,11 @@ class HXP
 	public static var bounds:Rectangle;
 
 	/**
+	 * A rectangle representing the safe area size ajusted.
+	 */
+	public static var safeArea:Rectangle;
+
+	/**
 	 * The default font file to use, by default: font/monofonto.ttf.
 	 */
 	public static var defaultFont:String = "font/monofonto";
@@ -192,12 +197,21 @@ class HXP
 		HXP.bounds.width = width;
 		HXP.bounds.height = height;
 		
+		HXP.safeArea.x = 0;
+		HXP.safeArea.y = 0;
+		HXP.safeArea.width = HXP.width;
+		HXP.safeArea.height = HXP.height;
+
 		#if nme
 		var safeRect = nme.Lib.current.stage.safeRect;
-		HXP.bounds.x = safeRect.x;
-		HXP.bounds.y = safeRect.y;
-		HXP.bounds.width = safeRect.width;
-		HXP.bounds.height = safeRect.height;
+		trace(safeRect);
+		trace(HXP.width + " " + HXP.height);
+		HXP.safeArea.x = Std.int((safeRect.x + 0.5) / HXP.screen.scaleX);
+		HXP.safeArea.y = Std.int((safeRect.y + 0.5) / HXP.screen.scaleY);
+		HXP.safeArea.width = Std.int((safeRect.width + 0.5) / HXP.screen.scaleX);
+		HXP.safeArea.height = Std.int((safeRect.height + 0.5) / HXP.screen.scaleY);
+		trace(HXP.safeArea.x + ", " + HXP.safeArea.y + ", " + HXP.safeArea.width + ", " + HXP.safeArea.height);
+		trace(HXP.width + " " + HXP.height);
 		#end
 
 		for (scene in HXP.engine) scene._resize();
