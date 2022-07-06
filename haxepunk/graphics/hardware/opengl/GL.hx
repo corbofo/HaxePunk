@@ -69,7 +69,7 @@ class GL
 	public static function useProgram(_) {}
 	public static function enableVertexAttribArray(_) {}
 	public static function disableVertexAttribArray(_) {}
-	public static function getAttribLocation(_, _) {}
+	public static function getAttribLocation(_, _) { return 0; }
 	public static function vertexAttribPointer(_, _, _, _, _, _) {}
 	public static function blendEquation(_) {}
 	public static function blendEquationSeparate(_, _) {}
