@@ -84,6 +84,11 @@ class HXP
 	public static var safeArea:Rectangle;
 
 	/**
+	 * A rectangle representing the safe area size.
+	 */
+	 public static var safeAreaRaw:Rectangle;
+
+	/**
 	 * The default font file to use, by default: font/monofonto.ttf.
 	 */
 	public static var defaultFont:String = "font/monofonto";
@@ -206,6 +211,11 @@ class HXP
 		var safeRect = nme.Lib.current.stage.safeRect;
 		trace(safeRect);
 		trace(HXP.width + " " + HXP.height);
+		HXP.safeAreaRaw.x = safeRect.x;
+		HXP.safeAreaRaw.y = safeRect.y;
+		HXP.safeAreaRaw.width = safeRect.width;
+		HXP.safeAreaRaw.height = safeRect.height;
+
 		HXP.safeArea.x = Std.int((safeRect.x + 0.5) / HXP.screen.scaleX);
 		HXP.safeArea.y = Std.int((safeRect.y + 0.5) / HXP.screen.scaleY);
 		HXP.safeArea.width = Std.int((safeRect.width + 0.5) / HXP.screen.scaleX);

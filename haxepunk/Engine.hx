@@ -82,6 +82,7 @@ class Engine
 		// global game properties
 		HXP.bounds = new Rectangle(0, 0, width, height);
 		HXP.safeArea = new Rectangle(0, 0, width, height);
+		HXP.safeAreaRaw = new Rectangle(0, 0, width, height);
 		HXP.assignedFrameRate = frameRate;
 		HXP.fixed = fixed;
 
